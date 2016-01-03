@@ -79,7 +79,10 @@ function update(source) {
 
   // Update the nodes…
   var node = svg.selectAll("g.node")
-      .data(nodes, function(d) { return d.id || (d.id = ++i); });
+      .data(nodes, function(d) {
+	     
+		return d.id ; 
+	  });
 	
 	  
   // Enter any new nodes at the parent's previous position.
