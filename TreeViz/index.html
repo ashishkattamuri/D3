@@ -102,6 +102,7 @@ function update(source) {
       .style("fill-opacity", 1e-6);
 
   // Transition nodes to their new position.
+  /*
   var nodeUpdate = node.transition()
       .duration(duration)
       .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
@@ -112,9 +113,9 @@ function update(source) {
 
   nodeUpdate.select("text")
       .style("fill-opacity", 1);
-
+*/
+	  
   // Transition exiting nodes to the parent's new position.
-  /*
   var nodeExit = node.exit().transition()
       .duration(duration)
       .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
@@ -125,7 +126,7 @@ function update(source) {
 
   nodeExit.select("text")
       .style("fill-opacity", 1e-6);
-*/
+
 	  
   // Update the links…
   var link = svg.selectAll("path.link")
@@ -154,12 +155,12 @@ function update(source) {
       .remove();
 
   // Stash the old positions for transition.
-  /*
+
   nodes.forEach(function(d) {
     d.x0 = d.x;
     d.y0 = d.y;
   });
-  */
+ 
 }
 
 // Toggle children on click.
