@@ -71,7 +71,7 @@ d3.select(self.frameElement).style("height", "800px");
 function update(source) {
 
   // Compute the new tree layout.
-  var nodes = tree.nodes(root).reverse(),
+  var nodes = tree.nodes(root).reverse();
       //links = tree.links(nodes);
 
   // Normalize for fixed-depth.
@@ -83,7 +83,7 @@ function update(source) {
 	   return d.id || (d.id = ++i); 
 	  });
 	
-	links = tree.links(nodes);
+  var links = tree.links(nodes);
 	  
   // Enter any new nodes at the parent's previous position.
   var nodeEnter = node.enter().append("g")
