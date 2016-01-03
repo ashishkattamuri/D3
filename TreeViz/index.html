@@ -136,8 +136,7 @@ function update(source) {
       .attr("class", "link")
       .attr("d", function(d) {
         var o = {x: source.x0, y: source.y0};
-		var o1 = {x: source.x, y: source.y}
-        return diagonal({source: o, target: o1});
+		return diagonal({source: o, target: o});
       });
 
   // Transition links to their new position.
