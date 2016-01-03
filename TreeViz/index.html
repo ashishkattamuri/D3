@@ -81,7 +81,7 @@ function update(source) {
   var node = svg.selectAll("g.node")
       .data(nodes, function(d) {
 	     
-		return d.id ; 
+		return d.id || (d.id = ++i); 
 	  });
 	
 	  
