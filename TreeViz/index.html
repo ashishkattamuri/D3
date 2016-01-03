@@ -72,7 +72,7 @@ function update(source) {
 
   // Compute the new tree layout.
   var nodes = tree.nodes(root).reverse(),
-      links = tree.links(nodes);
+      //links = tree.links(nodes);
 
   // Normalize for fixed-depth.
   nodes.forEach(function(d) { d.y = d.depth * 180; });
@@ -83,6 +83,7 @@ function update(source) {
 	   return d.id || (d.id = ++i); 
 	  });
 	
+	links = tree.links(nodes);
 	  
   // Enter any new nodes at the parent's previous position.
   var nodeEnter = node.enter().append("g")
