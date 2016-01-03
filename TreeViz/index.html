@@ -38,14 +38,8 @@ var i = 0,
 var tree = d3.layout.tree()
     .size([height, width]);
 
-//var diagonal = d3.svg.diagonal()
-//    .projection(function(d) { return [d.y, d.x]; });
-
 var diagonal = d3.svg.diagonal()
- .source(function(d) { return {"x":d.source.y, "y":d.source.x}; })            
-        .target(function(d) { return {"x":d.target.y, "y":d.target.x}; })
-	.projection(function(d) { return [d.y, d.x]; });	
-        
+    .projection(function(d) { return [d.y, d.x]; });
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.right + margin.left)
@@ -86,7 +80,7 @@ function update(source) {
   // Update the nodes…
   var node = svg.selectAll("g.node")
       .data(nodes, function(d) {
-	   return d.id ; 
+	   return d.id || (d.id = ++i); 
 	  });
 	
 	  
@@ -158,12 +152,12 @@ function update(source) {
       .remove();
 
   // Stash the old positions for transition.
-  
+  /*
   nodes.forEach(function(d) {
     d.x0 = d.x;
     d.y0 = d.y;
   });
-  
+  */
 }
 
 // Toggle children on click.
